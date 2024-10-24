@@ -17,6 +17,19 @@ const config = {
       initialProjectKey: '${env:INITIAL_PROJECT_KEY}',
     },
   },
+  additionalEnv:{
+    customObjectEndpoint: '${env:CUSTOM_OBJECT_ENDPOINT}',
+  },
+  headers: {
+    csp: {
+      'connect-src': [
+        '${env:CUSTOM_OBJECT_ENDPOINT}',
+      ],
+      'script-src': [
+        '${env:CUSTOM_OBJECT_ENDPOINT}',
+      ],
+    },
+  },
   oAuthScopes: {
     view: [
       'view_products',
